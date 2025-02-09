@@ -13,7 +13,7 @@ function easeOutCirc(x) {
 String.prototype.visualLength = function() {
     var ruler = document.getElementById("ruler");
     ruler.innerHTML = this;
-    return ruler.offsetWidth * 4;
+    return ruler.offsetWidth;
 }
 
 document.addEventListener("DOMContentLoaded", (event) => {

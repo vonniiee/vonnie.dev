@@ -2,6 +2,11 @@ html {
     background-color: black;
 }
 
+body, html {
+    margin: 0;
+    padding: 0;
+}
+
 * {
     font-family: Ubuntu;
     color: white;
@@ -13,6 +18,17 @@ html {
     visibility: hidden;
     white-space: nowrap;
     text-align: left;
+    position: absolute;
+    font-size: 4em;
+    top: 50%;
+    left: 0%;
+}
+
+.intro-container {
+    display: flex;
+    align-items: center;
+    height: 100vh;
+    justify-content: center;
 }
 
 .intro {
