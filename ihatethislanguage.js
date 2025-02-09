@@ -2,7 +2,7 @@
 
 var x = 0;
 var add = 0.004;
-
+const padge = 100;
 
 var interval = 0;
 
@@ -24,7 +24,7 @@ document.addEventListener("DOMContentLoaded", (event) => {
     while (true) {
 	message = "H" + i + " :3";
 	console.log(message.visualLength() + message);
-	if(message.visualLength() >= viewport_width) {
+	if(message.visualLength() >= (viewport_width - padge)) {
 	    break;
 	} else {
 	    i += 'i';
