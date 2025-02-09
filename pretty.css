@@ -1,0 +1,21 @@
+html {
+    background-color: black;
+}
+
+* {
+    font-family: Ubuntu;
+    color: white;
+    font-weight: normal;
+    text-align: center;
+}
+
+#ruler {
+    visibility: hidden;
+    white-space: nowrap;
+    text-align: left;
+}
+
+.intro {
+    font-size: 4em;
+    overflow-wrap: anywhere;
+}
