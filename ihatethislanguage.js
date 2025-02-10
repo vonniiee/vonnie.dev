@@ -1,6 +1,6 @@
 //UGHGHHGHGHGHGHHGHGH
 
-var add = 0.004;
+var add = 0.0045;
 var x = add;
 const padge = 100;
 const content_delay = 500;
@@ -44,10 +44,10 @@ window.addEventListener("load", (event) => {
     var back = document.getElementById("back");
     xnterval = setInterval(() => {
 	x += add;
-	if(x >= 0.9) {
+	if(x >= 0.7) {
 	    add *= -1;
 	}
-	x = Math.min(0.9, Math.max(0, x));
+	x = Math.min(0.7, Math.max(0, x));
     }, 1);
     aniterval = setInterval(() => {
 	var current_n = Math.round((message.length / 2) * easeOutCirc(x));
