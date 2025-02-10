@@ -12,6 +12,8 @@ body, html {
     color: white;
     font-weight: normal;
     text-align: center;
+    text-wrap: nowrap;
+    overflow-x: visible;
 }
 
 #ruler {
@@ -80,6 +82,9 @@ body, html {
     transition: 0.25s cubic-bezier(0.55, 0, 1, 0.45);
     overflow-wrap: anywhere;
     position: absolute;
+    display: inline-block;
+    white-space: nowrap;
+    overflow-x: visible;
     width: 100%;
 }
 
