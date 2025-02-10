@@ -19,19 +19,90 @@ body, html {
     white-space: nowrap;
     text-align: left;
     position: absolute;
-    font-size: 4em;
+    font-size: 5em;
     top: 50%;
     left: 0%;
 }
 
-.intro-container {
+.intro-container::before {
+    content: '';
+    z-index: -100;
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    width: 80vw;
+    height: 70vh;
+    border: 3px solid white;
+    mask:
+	linear-gradient(#000 50%, #0000 0) border-box
+	101% 101% / 200% 200% no-repeat;
+    mask-composite: exclude;
+    transition: 0.25s cubic-bezier(0.55, 0, 1, 0.45);*/
+}
+
+.intro-container.done::before {
+    mask-position: 0% 0%;
+}
+
+.intro-container.animating {
     display: flex;
     align-items: center;
     height: 100vh;
+    width: 100vw;
     justify-content: center;
 }
 
+.spacer {
+    font-size: 3em;
+    margin: 0px;
+    visibility: hidden;
+}
+
+.intro-container.done {
+    display: flex;
+    /*align-items: start;*/
+    justify-content: center;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    height: 70vh;
+    width: 80vw;
+    padding-top: 2%;
+    padding-left: 2%;
+    transform: translate(-50%, -50%);
+}
+
+.content {
+    width: 100%;
+}
+
 .intro {
-    font-size: 4em;
+    transition: 0.25s cubic-bezier(0.55, 0, 1, 0.45);
     overflow-wrap: anywhere;
+    position: absolute;
+    width: 100%;
+}
+
+.intro.animating {
+    flex: 0;
+    top: 50%;
+    font-size: 5em;
+}
+
+.intro.done {
+    top: 2%;
+    font-size: 3em;
+}
+
+.content-element {
+    transition: opacity 0.25s cubic-bezier(0.55, 0, 1, 0.45);
+    text-align: left!important;	
+}
+
+.content-element.init {
+    opacity: 0%;
+}
+
+.content-element.ready {
+    opacity: 100%;
 }
