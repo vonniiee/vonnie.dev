@@ -25,59 +25,61 @@ String.prototype.visualLength = function() {
 }
 
 window.addEventListener("load", (event) => {
-    var message;
-    let viewport_width = document.documentElement.clientWidth;
-    console.log(viewport_width);
-    let i = "i";
-    while (true) {
-	message = "H" + i + " :3";
-	console.log(message.visualLength() + message);
-	if(message.visualLength() >= (viewport_width - padge)) {
-	    break;
-	} else {
-	    i += 'i';
-	}
-    }
-    var left_pointer = 0;
-    var right_pointer = message.length - 1;
-    var front = document.getElementById("front");
-    var back = document.getElementById("back");
-    xnterval = setInterval(() => {
-	x += add;
-	if(x >= 0.7) {
-	    add *= -1;
-	}
-	x = Math.min(0.7, Math.max(0, x));
-    }, 1);
-    aniterval = setInterval(() => {
-	var current_n = Math.round((message.length / 2) * easeOutCirc(x));
-	if((current_n - front.innerHTML.length) > 0) {
-	    front.innerHTML += message[left_pointer];
-	    back.innerHTML = message[right_pointer] + back.innerHTML;
-	    left_pointer += 1;
-	    right_pointer -= 1;
-	}
-	if((current_n - front.innerHTML.length) < 0) {
-	    if (front.innerHTML != "Hii") {
-		front.innerHTML = front.innerHTML.substring(0, front.innerHTML.length - 1);
-	    }
-	    if (back.innerHTML != " :3") {
-		back.innerHTML = back.innerHTML.substring(1, back.innerHTML.length);
+    setTimeout(() => {
+	var message;
+	let viewport_width = document.documentElement.clientWidth;
+	console.log(viewport_width);
+	let i = "i";
+	while (true) {
+	    message = "H" + i + " :3";
+	    console.log(message.visualLength() + message);
+	    if(message.visualLength() >= (viewport_width - padge)) {
+		break;
+	    } else {
+		i += 'i';
 	    }
 	}
-    }, 1);
+	var left_pointer = 0;
+	var right_pointer = message.length - 1;
+	var front = document.getElementById("front");
+	var back = document.getElementById("back");
+	xnterval = setInterval(() => {
+	    x += add;
+	    if(x >= 0.7) {
+		add *= -1;
+	    }
+	    x = Math.min(0.7, Math.max(0, x));
+	}, 1);
+	aniterval = setInterval(() => {
+	    var current_n = Math.round((message.length / 2) * easeOutCirc(x));
+	    if((current_n - front.innerHTML.length) > 0) {
+		front.innerHTML += message[left_pointer];
+		back.innerHTML = message[right_pointer] + back.innerHTML;
+		left_pointer += 1;
+		right_pointer -= 1;
+	    }
+	    if((current_n - front.innerHTML.length) < 0) {
+		if (front.innerHTML != "Hii") {
+		    front.innerHTML = front.innerHTML.substring(0, front.innerHTML.length - 1);
+		}
+		if (back.innerHTML != " :3") {
+		    back.innerHTML = back.innerHTML.substring(1, back.innerHTML.length);
+		}
+	    }
+	}, 1);
 
-    setInterval(() => {
-	if (x <= 0) {
-	    clearInterval(xterval);
-	    clearInterval(aniterval);
-	}
+	setInterval(() => {
+	    if (x <= 0) {
+		clearInterval(xterval);
+		clearInterval(aniterval);
+	    }
 
-	if (x <= 0.35 && !firstDoneMain && add < 0) {
-	    doMain();
-	    firstDoneMain = true;
-	}
-    }, 100);
+	    if (x <= 0.35 && !firstDoneMain && add < 0) {
+		doMain();
+		firstDoneMain = true;
+	    }
+	}, 100);
+    }, 150);
 });
 
 function doMain() {
