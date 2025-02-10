@@ -24,7 +24,7 @@ String.prototype.visualLength = function() {
     return ruler.offsetWidth;
 }
 
-document.addEventListener("DOMContentLoaded", (event) => {
+window.addEventListener("load", (event) => {
     var message;
     let viewport_width = document.documentElement.clientWidth;
     console.log(viewport_width);
