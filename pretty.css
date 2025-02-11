@@ -14,6 +14,7 @@ body, html {
     text-align: center;
     text-wrap: nowrap;
     overflow-x: visible;
+    font-size: 1em;
 }
 
 #ruler {
@@ -100,8 +101,11 @@ body, html {
 }
 
 .content-element {
+    margin-top: 25px;
+    margin-bottom: 25px;
     transition: opacity 0.25s cubic-bezier(0.55, 0, 1, 0.45);
-    text-align: left!important;	
+    text-align: left!important;
+    font-size: 1.2em;
 }
 
 .content-element.init {
@@ -110,4 +114,24 @@ body, html {
 
 .content-element.ready {
     opacity: 100%;
+}
+
+.name {
+    font-size: 3em;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+.name > a {
+    font-weight: bold;
+}
+
+.subname {
+    margin-left: 3%;
+    color: darkgrey;
+    font-style: italic;
+    font-size: 0.8em;
+    padding-top: 0px;
+    margin-top: 0px;
+    margin-bottom: 45px;
 }
