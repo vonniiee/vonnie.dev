@@ -16,6 +16,17 @@ var page_dict = {}
 
 function copyDiscord() {
     navigator.clipboard.writeText("rvvvr");
+    let tooltip = document.getElementById("tooltip");
+    tooltip.classList.remove("hidden");
+    tooltip.classList.add("shown");
+    setTimeout(() => {
+	tooltip.classList.remove("shown");
+	tooltip.classList.add("away");
+	setTimeout(() => {
+	    tooltip.classList.remove("away");
+	    tooltip.classList.add("hidden");
+	}, 500)
+    }, 700)
 }
 
 function easeOutCirc(x) {
