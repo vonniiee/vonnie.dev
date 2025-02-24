@@ -14,6 +14,10 @@ var firstDoneMain = false;
 
 var page_dict = {}
 
+function copyDiscord() {
+    navigator.clipboard.writeText("rvvvr");
+}
+
 function easeOutCirc(x) {
     return x === 1 ? 1 : 1 - Math.pow(2, -10 * x);
 }

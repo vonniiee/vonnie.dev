@@ -222,3 +222,12 @@ body, html {
     top: 20px;
     left: 20px;
 }
+
+.discordbutton {
+    background-color: transparent;
+    border: 0px none;
+    padding: 0px 0px 0px 0px;
+    font-weight: bold;
+    text-decoration: underline;
+    cursor: pointer;
+}
