@@ -60,7 +60,7 @@ String.prototype.capitalize = function() {
 }
 
 function setPage(oldPage, page, didJustLoad) {
-    umami.track(props => ({...props, url: '/' + page, title: page.capitalize()}); 
+    umami.track(props => ({...props, url: '/' + page, title: page.capitalize()})); 
     if(didJustLoad) {
 	document.body.innerHTML = page_dict[page] + document.body.innerHTML;
 	//main's intro requires some extra
