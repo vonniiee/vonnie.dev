@@ -55,8 +55,12 @@ String.prototype.visualLength = function() {
     return ruler.offsetWidth;
 }
 
+String.prototype.capitalize = function() {
+    return this.charAt(0).toUpperCase() + this.slice(1);
+}
+
 function setPage(oldPage, page, didJustLoad) {
-    umami.track('goto-page', {name: page});
+    umami.track(props => ({...props, url: '/' + page, title: page.capitalize()}); 
     if(didJustLoad) {
 	document.body.innerHTML = page_dict[page] + document.body.innerHTML;
 	//main's intro requires some extra
