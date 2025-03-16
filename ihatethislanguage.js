@@ -56,6 +56,7 @@ String.prototype.visualLength = function() {
 }
 
 function setPage(oldPage, page, didJustLoad) {
+    umami.track('goto-page', {name: page});
     if(didJustLoad) {
 	document.body.innerHTML = page_dict[page] + document.body.innerHTML;
 	//main's intro requires some extra
